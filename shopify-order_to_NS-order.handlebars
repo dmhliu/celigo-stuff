@@ -1,0 +1,1 @@
+{{#each $.paymentTransactions}}{{#compare kind '==='  'authorization'}}{{receipt.authorization_num}}/{{receipt.transaction_tag}}/{{dateFormat "x" created_at "YYYY-MM-DD HH:mm:ss"}}/{{replace (join "" "" receipt.dollar_amount) "." “”}}/US1-TK{{else}}{{/compare}}{{/each}}
